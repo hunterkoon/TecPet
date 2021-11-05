@@ -13,18 +13,19 @@ using static TecPet.Model.Modelo;
 
 namespace TecPet
 {
-    public partial class Form1 : Form
+    public partial class Cadastro : Form
     {
         BaseConection.Repository repository = new BaseConection.Repository();
         List<AnimalModel> Animais = new List<AnimalModel>();
 
-        public Form1()
+        public Cadastro()
         {
             InitializeComponent();
-            Animais = repository.GetRacas();
+           
 
             try
             {
+                Animais = repository.GetRacas();
                 foreach (var param in Animais)
                 {
                     comboBoxRacas.Items.Add(param.Raca);
@@ -52,6 +53,8 @@ namespace TecPet
                     comboBoxRacas.SelectedItem.ToString(),
                     Convert.ToInt32(IdadePetTextBox.Text),
                     Convert.ToInt32(PesoPetTextBox.Text));
+               
+                MessageBox.Show("Animal Cadastado");
 
             }
             catch (Exception ex)
@@ -61,19 +64,9 @@ namespace TecPet
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
 
-
-
-
-        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    var dados = repository.GetDadosAnimal();
-
-        //    for (int i = 0; i < dados.Count(); i++)
-        //    {
-        //        dataGridView1.Rows.Add(dados[i].Nome, dados[i].Idade);
-
-        //    }
-        //}
+        }
     }
 }

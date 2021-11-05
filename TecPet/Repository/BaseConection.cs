@@ -53,7 +53,8 @@ namespace TecPet.Repository
                             PESO = peso
                         };
 
-                        var sql = @"insert into animal (Nome, Idade, Raca, Peso) values (@NOME , @IDADE, @RACA, @PESO) ";
+                        var sql = @"insert into animal (Nome, Idade, Raca, Peso)
+                                    values (@NOME , @IDADE, @RACA, @PESO)";
 
                         conn.Open();
 
@@ -64,7 +65,6 @@ namespace TecPet.Repository
                     }
                     catch
                     {
-
                         throw new Exception("Erro na conexão com banco de dados");
                     }
                 }

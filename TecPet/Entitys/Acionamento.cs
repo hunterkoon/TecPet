@@ -26,17 +26,17 @@ namespace TecPet.Entitys
 
         public string Aciona()
         {
-            if (VerificaAciona() == false)
+            if (VerificaAciona() == true)
             {
                 Motor = true;
-                return "Não há ração suficiente para esta operação";
+                return $"Operação realizada com sucesso, peso restante { NivelReservatorio - Consumo }";
 
             }
 
             else
             {
                 Motor = false;
-                return $"Operação realizada com sucesso, peso restante { NivelReservatorio - Consumo }";
+                return "Não há ração suficiente para esta operação";
             }
 
         }
