@@ -10,43 +10,34 @@ using TecPet.Model;
 
 namespace TecPet.Repository
 {
-   public class BaseConection : Controle
-    {
-      
-
-        public Controle GetDados (Controle dados)
+    public class BaseConection
+    {   
+        public class Repository : Modelo 
         {
-
-         string MyStringConnnection = "Server=localhost;Port=3306;database=creche;user id=root;password=Data@071194";
-
-            using (IDbConnection connection = new MySqlConnection(MyStringConnnection))
+            string MyStringConnnection = "Server=localhost;Port=3306;database=creche;user id=root;password=Data@071194";
+            public List<Animal> GetDadosAnimal()
             {
-                try
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
                 {
-                    Controle con = new Controle();
+                    try
+                    {
+                        List<Animal> control = new List<Animal>();
 
-                    connection.Open();
-                    var sql = "SELECT * FROM alunos";
+                        conn.Open();
+                        var sql = "SELECT * FROM alunos";
+                        control = conn.Query<Animal>(sql).ToList();
+                        conn.Close();
+                        return control;
 
-                    con = connection.Query<Controle>(sql).FirstOrDefault();
-
-                    connection.Close();
-
-                    return con;
-                }
-                catch
-                {
-                    throw new Exception("Erro na conexão com banco de dados");
+                    }
+                    catch
+                    {
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
                 }
 
             }
 
-
-
         }
-
-
-
-
     }
 }
