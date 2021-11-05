@@ -21,13 +21,13 @@ namespace TecPet.Entitys
 
         }
 
-        public string Consultar()
+        public string ConsultarReservatorio()
         {
             double consulta = QtdDepositada - QtdConsumida;
             return Dados = $"A quantidade restante é {consulta} gramas";
         }  
         
-        public double Adicionar (double adicao )
+        public double AdicionarReservatorio (double adicao )
         {
             return QtdDepositada += adicao;
 
