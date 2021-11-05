@@ -21,10 +21,11 @@ namespace TecPet
         public Form1()
         {
             InitializeComponent();
-            Animais = repository.GetRacas();
+           
 
             try
             {
+                Animais = repository.GetRacas();
                 foreach (var param in Animais)
                 {
                     comboBoxRacas.Items.Add(param.Raca);
@@ -62,18 +63,5 @@ namespace TecPet
         }
 
 
-
-
-
-        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    var dados = repository.GetDadosAnimal();
-
-        //    for (int i = 0; i < dados.Count(); i++)
-        //    {
-        //        dataGridView1.Rows.Add(dados[i].Nome, dados[i].Idade);
-
-        //    }
-        //}
     }
 }
