@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TecPet.Model;
 
 namespace TecPet.Entitys
 {
-    class Reservatorio 
+    class Reservatorio : Controle
     {
-        public int Nivel { get; set; }
-
-        public Reservatorio(int nivel)
+      
+        private  Reservatorio()
         {
-            nivel = 100;
-            Nivel = nivel;
+            var pesoInt = Convert.ToInt32(Math.Floor(PesoAual));            
+            NivelReservatorio = pesoInt / 100;
         }
 
         public int ConsultarNivel()
         {
-            return Nivel;
+            return NivelReservatorio;
 
         } 
         
@@ -26,11 +26,11 @@ namespace TecPet.Entitys
         {
             if(subAdd < 0)
             {
-                return Nivel - subAdd;
+                return NivelReservatorio - subAdd;
             }
             else
             {
-                return Nivel + subAdd;
+                return NivelReservatorio + subAdd;
             }
             
 

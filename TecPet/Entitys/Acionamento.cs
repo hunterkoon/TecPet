@@ -3,21 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TecPet.Model;
 
 namespace TecPet.Entitys
 {
-    class Acionamento
+
+    class Acionamento : Controle
     {
 
-        public double PesoDesejado { get; set; }
-        public double PesoAual { get; set; }
-
-        public Acionamento(double pesoDesejado, Reservatorio reservatorio)
-        {
-            PesoDesejado = pesoDesejado;
-            PesoAual = reservatorio.Nivel;
-        }
-
+      
         public double ConsultarAcionamento()
         {
             return PesoAual;
@@ -35,12 +29,19 @@ namespace TecPet.Entitys
 
         public string Aciona()
         {
-            if(VerificaAciona() == false)            
-                return "Não há ração suficiente para esta operação";    
-            
-            else            
-                return $"Operação realizada com sucesso, peso restante { PesoAual - PesoDesejado }";            
-             
+            if (VerificaAciona() == false)
+            {
+                Motor = true;
+                return "Não há ração suficiente para esta operação";
+
+            }
+
+            else
+            {
+                Motor = false;
+                return $"Operação realizada com sucesso, peso restante { PesoAual - PesoDesejado }";
+            }
+
         }
 
         public string Parada()
@@ -52,9 +53,6 @@ namespace TecPet.Entitys
                 return $"Reservatório com { PesoAual} gramas";
 
         }
-
-
-
 
 
     }
