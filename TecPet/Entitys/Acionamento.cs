@@ -4,22 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TecPet.Model;
+using static TecPet.Model.Modelo;
 
 namespace TecPet.Entitys
 {
 
-    class Acionamento : Controle
+
+    class Acionamento : Dispositivo
     {
 
-      
-        public double ConsultarAcionamento()
-        {
-            return PesoAual;
-        }
 
         public bool VerificaAciona()
         {
-            if (PesoDesejado < PesoAual)
+            if (NivelReservatorio < 1)
                 return false;
 
             else
@@ -39,18 +36,18 @@ namespace TecPet.Entitys
             else
             {
                 Motor = false;
-                return $"Operação realizada com sucesso, peso restante { PesoAual - PesoDesejado }";
+                return $"Operação realizada com sucesso, peso restante { NivelReservatorio - QtdConsumida }";
             }
 
         }
 
         public string Parada()
         {
-            if (PesoAual == 0)
+            if (NivelReservatorio == 0)
                 return "Abasteça o reservatorio";
 
             else
-                return $"Reservatório com { PesoAual} gramas";
+                return $"Reservatório com { NivelReservatorio} %";
 
         }
 

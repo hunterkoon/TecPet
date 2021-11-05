@@ -13,15 +13,11 @@ namespace TecPet.Model
         {
             public DateTime Agendamento { get; set; }
             public bool? Motor { get; set; }
-            public float NivelRecipiente { get; set; }
             public string Relatorio { get; set; }
-            public double Peso { get; set; }
-            public string DadosRelatorio { get; set; }
             public double QtdDepositada { get; set; }
             public double QtdConsumida { get; set; }
             public int NivelReservatorio { get; set; }
-            public double PesoDesejado { get; set; }
-            public double PesoAual { get; set; }
+            public int NivelRecipiente { get; set; }
         }
         public class Animal
         {

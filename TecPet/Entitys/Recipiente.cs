@@ -4,26 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TecPet.Model;
+using static TecPet.Model.Modelo;
 
 namespace TecPet.Entitys
 {
-    public class Recipiente : Controle
+    public class Recipiente : Dispositivo
     {
    
         public double ConsultarRecipiente()
         {
-            return Peso;
+            return NivelRecipiente;
         }
 
         public double EditarRecipiente(double subAdd)
         {
             if (subAdd < 0)
             {
-                return Peso - subAdd;
+                return NivelRecipiente - subAdd;
             }
             else
             {
-                return Peso + subAdd;
+                return NivelRecipiente + subAdd;
             }
         }
     }

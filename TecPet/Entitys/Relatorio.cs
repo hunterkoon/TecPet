@@ -4,25 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TecPet.Model;
+using static TecPet.Model.Modelo;
 
 namespace TecPet.Entitys
 {
-    class Relatorio : Controle
+    class Relatorio : Dispositivo
     {
-    
-    
-        public string ConsultarReservatorio()
+        public override string ToString()
         {
-            double consulta = QtdDepositada - QtdConsumida;
-            return DadosRelatorio = $"A quantidade restante é {consulta} gramas";
-        }  
-        
-        public double AdicionarReservatorio (double adicao )
-        {
-            return QtdDepositada += adicao;
-
+            return $"Motor:  { Motor} " +
+                $"Agendamento {Agendamento}" +
+                $"Nivel Reservatorio {NivelReservatorio}" +
+                $"Nivel Recipiente {NivelRecipiente}";
         }
-
 
     }
 }

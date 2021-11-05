@@ -4,17 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TecPet.Model;
+using static TecPet.Model.Modelo;
 
 namespace TecPet.Entitys
 {
-    class Reservatorio : Controle
+    class Reservatorio : Dispositivo
     {
-      
-        private  Reservatorio()
-        {
-            var pesoInt = Convert.ToInt32(Math.Floor(PesoAual));            
-            NivelReservatorio = pesoInt / 100;
-        }
 
         public int ConsultarNivel()
         {
