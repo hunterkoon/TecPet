@@ -8,12 +8,13 @@ using static TecPet.Model.Modelo;
 
 namespace TecPet.Entitys
 {
-    class Relatorio : Dispositivo
+    class Relatorio : RelatorioModel 
     {
         public override string ToString()
         {
-            return $"Motor:  { Motor} " +
-                $"Agendamento {Agendamento}" +
+
+            return $"Motor:  {Motor} " +
+                $"Agendamento {DiaSemana}" +
                 $"Nivel Reservatorio {NivelReservatorio}" +
                 $"Nivel Recipiente {NivelRecipiente}";
         }

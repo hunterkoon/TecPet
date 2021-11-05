@@ -10,7 +10,7 @@ namespace TecPet.Entitys
 {
 
 
-    class Acionamento : Dispositivo
+    class Acionamento : DispositivoModel
     {
 
 
@@ -36,7 +36,7 @@ namespace TecPet.Entitys
             else
             {
                 Motor = false;
-                return $"Operação realizada com sucesso, peso restante { NivelReservatorio - QtdConsumida }";
+                return $"Operação realizada com sucesso, peso restante { NivelReservatorio - Consumo }";
             }
 
         }

@@ -8,7 +8,7 @@ using static TecPet.Model.Modelo;
 
 namespace TecPet.Entitys
 {
-    public class Recipiente : Dispositivo
+    public class Recipiente : DispositivoModel
     {
    
         public double ConsultarRecipiente()

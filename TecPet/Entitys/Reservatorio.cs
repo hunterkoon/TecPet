@@ -8,7 +8,7 @@ using static TecPet.Model.Modelo;
 
 namespace TecPet.Entitys
 {
-    class Reservatorio : Dispositivo
+    class Reservatorio : DispositivoModel
     {
 
         public int ConsultarNivel()
