@@ -14,15 +14,12 @@ namespace TecPet.Entitys
         public float NivelRecipiente { get; set; }
         public List<string> Relatorio { get; set; }
 
-        public Controle(DateTime agendamento, bool? motor, float nivelRecipiente)
+        public Controle(DateTime agendamento, bool? motor, float nivelRecipiente, List<string> relatorio)
         {
             Agendamento = agendamento;
             Motor = motor;
-            NivelRecipiente = nivelRecipiente;                 
-
+            NivelRecipiente = nivelRecipiente;
+            Relatorio = relatorio;
         }
-
-
-
     }
 }
