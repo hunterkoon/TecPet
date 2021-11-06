@@ -7,11 +7,8 @@ using TecPet.Entitys;
 
 namespace TecPet.Model
 {
-    public class Error
-    {
-        public string ErroMenssagem { get; set; }
-    }
-    public class Modelo : Error
+
+    public class Modelo 
     {
     
         public class DispositivoModel 

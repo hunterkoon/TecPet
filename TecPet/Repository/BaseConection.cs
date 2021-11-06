@@ -11,10 +11,12 @@ using TecPet.Model;
 namespace TecPet.Repository
 {
     public class BaseConection
-    {   
-        public class Repository : Modelo 
+    {
+        public class Repository : Modelo
         {
             string MyStringConnnection = "Server=localhost;Port=3306;database=tecpet;user id=root;password=Data@071194";
+
+
             public List<AnimalModel> GetRacas()
             {
                 using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
@@ -32,14 +34,14 @@ namespace TecPet.Repository
                     }
                     catch
                     {
-                       
-                        throw  new Exception ( "Erro na conexão com banco de dados");
+
+                        throw new Exception("Erro na conexão com banco de dados");
                     }
                 }
 
             }
 
-            public void PostPet(string nome,  string raca , int idade, int peso)
+            public void PostPet(string nome, string raca, int idade, int peso)
             {
                 using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
                 {
@@ -61,7 +63,7 @@ namespace TecPet.Repository
 
                         conn.Execute(sql, i);
                         conn.Close();
-                       
+
                     }
                     catch
                     {
@@ -70,6 +72,66 @@ namespace TecPet.Repository
                 }
 
             }
+
+            public void DeletePet(int id)
+            {
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
+                {
+                    try
+                    {
+                        var i = new
+                        {
+                            ID = id
+                        };
+
+                        var sql = @"delete from animal where id = @ID";
+
+                        conn.Open();
+                        conn.Execute(sql, i);
+                        conn.Close();
+
+                    }
+                    catch
+                    {
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
+                }
+
+            }
+
+
+
+
+            public List<AnimalModel> GetPets()
+            {
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
+                {
+                    try
+                    {
+                        List<AnimalModel> animals = new List<AnimalModel>();
+
+                        conn.Open();
+                        var sql = "SELECT * FROM animal";
+                        animals = conn.Query<AnimalModel>(sql).ToList();
+                        conn.Close();
+                        return animals;
+
+                    }
+                    catch
+                    {
+
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
+                }
+
+            }
+
+
+
+
+
+
+
 
         }
     }

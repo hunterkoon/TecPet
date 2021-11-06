@@ -40,8 +40,8 @@ namespace TecPet
             this.PesoPetLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,12 +124,14 @@ namespace TecPet
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 244);
+            this.button1.BackColor = System.Drawing.Color.OliveDrab;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(17, 244);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 46);
+            this.button1.Size = new System.Drawing.Size(101, 46);
             this.button1.TabIndex = 9;
-            this.button1.Text = "Cadastrar Pet";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "Cadastrar ";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
@@ -147,28 +149,29 @@ namespace TecPet
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Pet";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(159, 315);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Proximo";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(124, 244);
+            this.button3.Location = new System.Drawing.Point(126, 244);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(110, 46);
+            this.button3.Size = new System.Drawing.Size(108, 46);
             this.button3.TabIndex = 11;
             this.button3.Text = "Limpar";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Form1
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(84, 310);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Meus Pets";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -180,7 +183,7 @@ namespace TecPet
             this.Controls.Add(this.erroMenssagem);
             this.Controls.Add(this.comboBoxRacas);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
+            this.Name = "Cadastro";
             this.Text = "Cadastrar Pet";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -34,7 +34,7 @@ namespace TecPet
             }
             catch (Exception ex)
             {
-                erroMenssagem.Text = ex.ToString();
+                MessageBox.Show(ex.ToString());
             }
       
 
@@ -59,14 +59,24 @@ namespace TecPet
             }
             catch (Exception ex)
             {
-                erroMenssagem.Text = ex.ToString();
+                MessageBox.Show(ex.ToString());  
             }
 
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            ListaPets new_Form = new ListaPets();
+            new_Form.Show();
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            NomePetTextBox.Text = "";
+            IdadePetTextBox.Text = "";
+            PesoPetTextBox.Text = "";
+            IdadePetTextBox.Text = "";
+            comboBoxRacas.Text = "";
         }
     }
 }
