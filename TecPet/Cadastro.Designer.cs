@@ -41,6 +41,8 @@ namespace TecPet
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -100,7 +102,7 @@ namespace TecPet
             // IdadePetLabel
             // 
             this.IdadePetLabel.AutoSize = true;
-            this.IdadePetLabel.Location = new System.Drawing.Point(19, 184);
+            this.IdadePetLabel.Location = new System.Drawing.Point(15, 184);
             this.IdadePetLabel.Name = "IdadePetLabel";
             this.IdadePetLabel.Size = new System.Drawing.Size(39, 15);
             this.IdadePetLabel.TabIndex = 5;
@@ -108,15 +110,15 @@ namespace TecPet
             // 
             // PesoPetTextBox
             // 
-            this.PesoPetTextBox.Location = new System.Drawing.Point(106, 241);
+            this.PesoPetTextBox.Location = new System.Drawing.Point(87, 202);
             this.PesoPetTextBox.Name = "PesoPetTextBox";
-            this.PesoPetTextBox.Size = new System.Drawing.Size(140, 23);
+            this.PesoPetTextBox.Size = new System.Drawing.Size(72, 23);
             this.PesoPetTextBox.TabIndex = 8;
             // 
             // PesoPetLabel
             // 
             this.PesoPetLabel.AutoSize = true;
-            this.PesoPetLabel.Location = new System.Drawing.Point(97, 184);
+            this.PesoPetLabel.Location = new System.Drawing.Point(87, 184);
             this.PesoPetLabel.Name = "PesoPetLabel";
             this.PesoPetLabel.Size = new System.Drawing.Size(32, 15);
             this.PesoPetLabel.TabIndex = 7;
@@ -136,6 +138,7 @@ namespace TecPet
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.PesoPetTextBox);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
@@ -161,6 +164,10 @@ namespace TecPet
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(84, 310);
@@ -176,7 +183,6 @@ namespace TecPet
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(278, 422);
-            this.Controls.Add(this.PesoPetTextBox);
             this.Controls.Add(this.IdadePetTextBox);
             this.Controls.Add(this.NomePetTextBox);
             this.Controls.Add(this.NomePeLabel);
@@ -205,8 +211,10 @@ namespace TecPet
         private System.Windows.Forms.Label PesoPetLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

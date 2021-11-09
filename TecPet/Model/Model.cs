@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace TecPet.Model
             public string Raca { get; set; }
             public int Idade { get; set; }
             public double Peso { get; set; }
+            public Image Imagem { get; set; }
 
         }
 

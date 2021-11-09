@@ -99,9 +99,6 @@ namespace TecPet.Repository
 
             }
 
-
-
-
             public List<AnimalModel> GetPets()
             {
                 using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
@@ -126,13 +123,82 @@ namespace TecPet.Repository
 
             }
 
+            public UsuarioModel Login(string usuario, string senha)
+            {
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
+                {
+                    try
+                    {
+                        UsuarioModel user = new UsuarioModel();
+
+                        var i = new {
+
+                            USUARIO = usuario,
+                            SENHA = senha
+                        };
+
+                        conn.Open();
+
+                        var sql = "SELECT * FROM usuarios WHERE usuario = @USUARIO and senha = @SENHA";
+
+                        user = conn.Query<UsuarioModel>(sql, i).FirstOrDefault();
+                        conn.Close();
 
 
+                        return user;
+
+
+                    }
+                    catch
+                    {
+
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
+                }
+
+            }
+
+
+
+
+
+
+            public string CadastrarLogin(string nome, string usuario, string senha)
+            {
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
+                {
+                    try
+                    {
+                        var i = new
+
+                        {
+                            NOME = nome, 
+                            USUARIO = usuario,
+                            SENHA = senha
+                        };
+
+                        var sql = @"insert into usuarios (nome,usuario,senha)values(@NOME,@USUARIO,@SENHA)";
+
+                        conn.Open();
+                        conn.Execute(sql, i);
+                        conn.Close();
+
+                        return "Usuário Cadastrado";
+
+                    }
+                    catch
+                    {
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
+                }
+
+            }
 
 
 
 
 
         }
+
     }
 }
