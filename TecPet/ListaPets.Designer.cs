@@ -30,6 +30,8 @@ namespace TecPet
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.welcomeLabel = new System.Windows.Forms.Label();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.BtnAtualizar = new System.Windows.Forms.Button();
             this.tabelaMeusPets = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,26 +39,49 @@ namespace TecPet
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deleteBtn = new System.Windows.Forms.Button();
+            this.Imagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaMeusPets)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.welcomeLabel);
             this.groupBox1.Controls.Add(this.deleteBtn);
             this.groupBox1.Controls.Add(this.BtnAtualizar);
             this.groupBox1.Controls.Add(this.tabelaMeusPets);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 409);
+            this.groupBox1.Size = new System.Drawing.Size(776, 420);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gerenciar Pets";
             // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.AutoSize = true;
+            this.welcomeLabel.Location = new System.Drawing.Point(595, 19);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(34, 15);
+            this.welcomeLabel.TabIndex = 4;
+            this.welcomeLabel.Text = "Olá , ";
+            this.welcomeLabel.Click += new System.EventHandler(this.welcomeLabel_Click);
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.Red;
+            this.deleteBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.deleteBtn.Location = new System.Drawing.Point(546, 380);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(111, 23);
+            this.deleteBtn.TabIndex = 3;
+            this.deleteBtn.Text = "Deletar";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
             // BtnAtualizar
             // 
-            this.BtnAtualizar.Location = new System.Drawing.Point(663, 312);
+            this.BtnAtualizar.Location = new System.Drawing.Point(663, 380);
             this.BtnAtualizar.Name = "BtnAtualizar";
             this.BtnAtualizar.Size = new System.Drawing.Size(107, 23);
             this.BtnAtualizar.TabIndex = 2;
@@ -74,11 +99,12 @@ namespace TecPet
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.tabelaMeusPets.Location = new System.Drawing.Point(6, 44);
+            this.dataGridViewTextBoxColumn5,
+            this.Imagem});
+            this.tabelaMeusPets.Location = new System.Drawing.Point(12, 114);
             this.tabelaMeusPets.Name = "tabelaMeusPets";
             this.tabelaMeusPets.RowTemplate.Height = 25;
-            this.tabelaMeusPets.Size = new System.Drawing.Size(764, 250);
+            this.tabelaMeusPets.Size = new System.Drawing.Size(764, 243);
             this.tabelaMeusPets.TabIndex = 1;
             this.tabelaMeusPets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaMeusPets_CellContentClick);
             // 
@@ -112,17 +138,10 @@ namespace TecPet
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // deleteBtn
+            // Imagem
             // 
-            this.deleteBtn.BackColor = System.Drawing.Color.Red;
-            this.deleteBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.deleteBtn.Location = new System.Drawing.Point(582, 312);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(75, 23);
-            this.deleteBtn.TabIndex = 3;
-            this.deleteBtn.Text = "Deletar";
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            this.Imagem.HeaderText = "Imagem";
+            this.Imagem.Name = "Imagem";
             // 
             // ListaPets
             // 
@@ -133,6 +152,7 @@ namespace TecPet
             this.Name = "ListaPets";
             this.Text = "Meus Pets";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaMeusPets)).EndInit();
             this.ResumeLayout(false);
 
@@ -142,12 +162,14 @@ namespace TecPet
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView tabelaMeusPets;
+        private System.Windows.Forms.Button BtnAtualizar;
+        private System.Windows.Forms.Button deleteBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.Button BtnAtualizar;
-        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Imagem;
+        private System.Windows.Forms.Label welcomeLabel;
     }
 }

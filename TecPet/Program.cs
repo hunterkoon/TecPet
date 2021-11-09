@@ -17,7 +17,7 @@ namespace TecPet
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Cadastro());
+            Application.Run(new MenuPrincipal());
         }
     }
 }
