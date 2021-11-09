@@ -123,14 +123,14 @@ namespace TecPet.Repository
                 }
 
             }
-        
 
+<<<<<<<<< Temporary merge branch 1
+=========
             #endregion
-
-
 
             #region USUÁRIOS
 
+>>>>>>>>> Temporary merge branch 2
             public UsuarioModel Login(string usuario, string senha)
             {
                 using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
