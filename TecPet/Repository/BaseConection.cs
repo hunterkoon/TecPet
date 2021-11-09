@@ -124,6 +124,41 @@ namespace TecPet.Repository
 
             }
 
+            public UsuarioModel Login(string usuario, string senha)
+            {
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
+                {
+                    try
+                    {
+                        UsuarioModel user = new UsuarioModel();
+
+                        var i = new {
+
+                            USUARIO = usuario,
+                            SENHA = senha
+                        };
+
+                        conn.Open();
+
+                        var sql = "SELECT * FROM usuarios WHERE usuario = @USUARIO and senha = @SENHA";
+
+                        user = conn.Query<UsuarioModel>(sql, i).FirstOrDefault();
+                        conn.Close();
+
+
+                        return user;
+
+
+                    }
+                    catch
+                    {
+
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
+                }
+
+            }
+
             #endregion
 
             #region USUÁRIOS
