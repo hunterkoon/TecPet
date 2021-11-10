@@ -1,7 +1,7 @@
 ﻿
 namespace TecPet
 {
-    partial class Cadastro
+    partial class CadastroPet
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,6 +29,8 @@ namespace TecPet
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroPet));
             this.comboBoxRacas = new System.Windows.Forms.ComboBox();
             this.cbxRacas = new System.Windows.Forms.Label();
             this.erroMenssagem = new System.Windows.Forms.Label();
@@ -40,28 +42,34 @@ namespace TecPet
             this.PesoPetLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tipoPetCbx = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.picturePetBox = new System.Windows.Forms.PictureBox();
+            this.inserirFotoBtn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.button2 = new System.Windows.Forms.Button();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePetBox)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxRacas
             // 
             this.comboBoxRacas.FormattingEnabled = true;
             this.comboBoxRacas.Items.AddRange(new object[] {
-            "Poddle"});
-            this.comboBoxRacas.Location = new System.Drawing.Point(27, 120);
+            "Sem Raça Definida"});
+            this.comboBoxRacas.Location = new System.Drawing.Point(24, 271);
             this.comboBoxRacas.Name = "comboBoxRacas";
-            this.comboBoxRacas.Size = new System.Drawing.Size(219, 23);
+            this.comboBoxRacas.Size = new System.Drawing.Size(179, 23);
             this.comboBoxRacas.TabIndex = 0;
             this.comboBoxRacas.SelectedIndexChanged += new System.EventHandler(this.comboBoxRacas_SelectedIndexChanged);
             // 
             // cbxRacas
             // 
             this.cbxRacas.AutoSize = true;
-            this.cbxRacas.Location = new System.Drawing.Point(15, 54);
+            this.cbxRacas.Location = new System.Drawing.Point(24, 253);
             this.cbxRacas.Name = "cbxRacas";
             this.cbxRacas.Size = new System.Drawing.Size(112, 15);
             this.cbxRacas.TabIndex = 1;
@@ -79,7 +87,7 @@ namespace TecPet
             // NomePeLabel
             // 
             this.NomePeLabel.AutoSize = true;
-            this.NomePeLabel.Location = new System.Drawing.Point(27, 163);
+            this.NomePeLabel.Location = new System.Drawing.Point(24, 66);
             this.NomePeLabel.Name = "NomePeLabel";
             this.NomePeLabel.Size = new System.Drawing.Size(40, 15);
             this.NomePeLabel.TabIndex = 3;
@@ -87,14 +95,14 @@ namespace TecPet
             // 
             // NomePetTextBox
             // 
-            this.NomePetTextBox.Location = new System.Drawing.Point(27, 181);
+            this.NomePetTextBox.Location = new System.Drawing.Point(24, 84);
             this.NomePetTextBox.Name = "NomePetTextBox";
-            this.NomePetTextBox.Size = new System.Drawing.Size(219, 23);
+            this.NomePetTextBox.Size = new System.Drawing.Size(179, 23);
             this.NomePetTextBox.TabIndex = 4;
             // 
             // IdadePetTextBox
             // 
-            this.IdadePetTextBox.Location = new System.Drawing.Point(27, 241);
+            this.IdadePetTextBox.Location = new System.Drawing.Point(24, 210);
             this.IdadePetTextBox.Name = "IdadePetTextBox";
             this.IdadePetTextBox.Size = new System.Drawing.Size(62, 23);
             this.IdadePetTextBox.TabIndex = 6;
@@ -102,7 +110,7 @@ namespace TecPet
             // IdadePetLabel
             // 
             this.IdadePetLabel.AutoSize = true;
-            this.IdadePetLabel.Location = new System.Drawing.Point(15, 184);
+            this.IdadePetLabel.Location = new System.Drawing.Point(24, 192);
             this.IdadePetLabel.Name = "IdadePetLabel";
             this.IdadePetLabel.Size = new System.Drawing.Size(39, 15);
             this.IdadePetLabel.TabIndex = 5;
@@ -110,7 +118,7 @@ namespace TecPet
             // 
             // PesoPetTextBox
             // 
-            this.PesoPetTextBox.Location = new System.Drawing.Point(87, 202);
+            this.PesoPetTextBox.Location = new System.Drawing.Point(131, 210);
             this.PesoPetTextBox.Name = "PesoPetTextBox";
             this.PesoPetTextBox.Size = new System.Drawing.Size(72, 23);
             this.PesoPetTextBox.TabIndex = 8;
@@ -118,7 +126,7 @@ namespace TecPet
             // PesoPetLabel
             // 
             this.PesoPetLabel.AutoSize = true;
-            this.PesoPetLabel.Location = new System.Drawing.Point(87, 184);
+            this.PesoPetLabel.Location = new System.Drawing.Point(131, 192);
             this.PesoPetLabel.Name = "PesoPetLabel";
             this.PesoPetLabel.Size = new System.Drawing.Size(32, 15);
             this.PesoPetLabel.TabIndex = 7;
@@ -128,7 +136,7 @@ namespace TecPet
             // 
             this.button1.BackColor = System.Drawing.Color.OliveDrab;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(17, 244);
+            this.button1.Location = new System.Drawing.Point(240, 364);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 46);
             this.button1.TabIndex = 9;
@@ -138,25 +146,82 @@ namespace TecPet
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.tipoPetCbx);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.NomePetTextBox);
+            this.groupBox1.Controls.Add(this.NomePeLabel);
+            this.groupBox1.Controls.Add(this.IdadePetTextBox);
+            this.groupBox1.Controls.Add(this.picturePetBox);
             this.groupBox1.Controls.Add(this.PesoPetTextBox);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.PesoPetLabel);
+            this.groupBox1.Controls.Add(this.inserirFotoBtn);
             this.groupBox1.Controls.Add(this.IdadePetLabel);
             this.groupBox1.Controls.Add(this.cbxRacas);
-            this.groupBox1.Location = new System.Drawing.Point(12, 39);
+            this.groupBox1.Controls.Add(this.comboBoxRacas);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 356);
+            this.groupBox1.Size = new System.Drawing.Size(428, 334);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Pet";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 15);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Selecione um Tipo";
+            // 
+            // tipoPetCbx
+            // 
+            this.tipoPetCbx.FormattingEnabled = true;
+            this.tipoPetCbx.Items.AddRange(new object[] {
+            "Gato",
+            "Cachorro",
+            "Passaro",
+            "Camundongos"});
+            this.tipoPetCbx.Location = new System.Drawing.Point(24, 148);
+            this.tipoPetCbx.Name = "tipoPetCbx";
+            this.tipoPetCbx.Size = new System.Drawing.Size(179, 23);
+            this.tipoPetCbx.TabIndex = 15;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(258, 286);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 15);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Insira uma Foto de Perfil";
+            // 
+            // picturePetBox
+            // 
+            this.picturePetBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.picturePetBox.Location = new System.Drawing.Point(258, 66);
+            this.picturePetBox.Name = "picturePetBox";
+            this.picturePetBox.Size = new System.Drawing.Size(130, 130);
+            this.picturePetBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturePetBox.TabIndex = 13;
+            this.picturePetBox.TabStop = false;
+            // 
+            // inserirFotoBtn
+            // 
+            this.inserirFotoBtn.Image = ((System.Drawing.Image)(resources.GetObject("inserirFotoBtn.Image")));
+            this.inserirFotoBtn.Location = new System.Drawing.Point(288, 217);
+            this.inserirFotoBtn.Name = "inserirFotoBtn";
+            this.inserirFotoBtn.Size = new System.Drawing.Size(68, 56);
+            this.inserirFotoBtn.TabIndex = 12;
+            this.inserirFotoBtn.UseVisualStyleBackColor = true;
+            this.inserirFotoBtn.Click += new System.EventHandler(this.inserirFotoBtn_Click);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(126, 244);
+            this.button3.Location = new System.Drawing.Point(107, 364);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 46);
             this.button3.TabIndex = 11;
@@ -168,31 +233,25 @@ namespace TecPet
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button2
+            // notifyIcon1
             // 
-            this.button2.Location = new System.Drawing.Point(84, 310);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Meus Pets";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
-            // Cadastro
+            // CadastroPet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 422);
-            this.Controls.Add(this.IdadePetTextBox);
-            this.Controls.Add(this.NomePetTextBox);
-            this.Controls.Add(this.NomePeLabel);
+            this.ClientSize = new System.Drawing.Size(453, 422);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.erroMenssagem);
-            this.Controls.Add(this.comboBoxRacas);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Cadastro";
+            this.Name = "CadastroPet";
             this.Text = "Cadastrar Pet";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picturePetBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +273,12 @@ namespace TecPet
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.PictureBox picturePetBox;
+        private System.Windows.Forms.Button inserirFotoBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox tipoPetCbx;
+        private System.Windows.Forms.Label label1;
     }
 }
 

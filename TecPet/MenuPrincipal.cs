@@ -22,7 +22,7 @@ namespace TecPet
 
         private void cadastarNovoPetToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Cadastro cad = new Cadastro();
+            CadastroPet cad = new CadastroPet();
             cad.Show();
 
         }
@@ -37,15 +37,15 @@ namespace TecPet
         {
             try
             {
-                if (loginUsuarioTxtBox.Text != "" && loginSenhaTxtBox.Text != "")
+                if ((loginUsuarioTxtBox.Text != "") && (loginSenhaTxtBox.Text != ""))
                 {
                     var login = repository.Login(loginUsuarioTxtBox.Text, loginSenhaTxtBox.Text);
-                   
+
                     if (login != null)
                     {
                         lstPets.Show();
                         lstPets.redesenhar(login.Nome);
-
+                        lstPets.tabelaPets();
                     }
                     else
                         MessageBox.Show("Usuário e/ou senha incorretos");

@@ -28,7 +28,8 @@ namespace TecPet.Model
             public string Raca { get; set; }
             public int Idade { get; set; }
             public double Peso { get; set; }
-            public Image Imagem { get; set; }
+            public byte[] Imagem { get; set; }
+            public string TipoPet { get;set; }
 
         }
 

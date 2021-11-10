@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,12 +14,12 @@ using static TecPet.Model.Modelo;
 
 namespace TecPet
 {
-    public partial class Cadastro : Form
+    public partial class CadastroPet : Form
     {
         BaseConection.Repository repository = new BaseConection.Repository();
         List<AnimalModel> Animais = new List<AnimalModel>();
 
-        public Cadastro()
+        public CadastroPet()
         {
             InitializeComponent();
            
@@ -47,12 +48,28 @@ namespace TecPet
         private void button1_Click(object sender, EventArgs e)
         {
             try
-            {
+            {   
+                // SALVAR IMAGEM DENTRO DE UM ARRAY BYTES
 
-                repository.PostPet(NomePetTextBox.Text.ToString(),
-                    comboBoxRacas.SelectedItem.ToString(),
-                    Convert.ToInt32(IdadePetTextBox.Text),
-                    Convert.ToInt32(PesoPetTextBox.Text));
+                byte[] imageByte = null;
+                FileStream fstream = new FileStream( picturePetBox.ImageLocation.ToString(), FileMode.Open, FileAccess.Read );
+                BinaryReader br = new BinaryReader(fstream);
+                imageByte = br.ReadBytes((int)fstream.Length);
+
+                // ALIMENTAR MODEL 
+
+                AnimalModel animal = new AnimalModel() {
+                    Nome = NomePetTextBox.Text,
+                    Peso = Convert.ToInt32(PesoPetTextBox.Text),
+                    Idade = Convert.ToInt32(IdadePetTextBox.Text),
+                    TipoPet = tipoPetCbx.Text,
+                    Raca = comboBoxRacas.SelectedItem.ToString(),
+                    Imagem = imageByte
+                };
+                                                             
+                // GRAVAR NO BANCO DE DADOS
+
+                repository.PostPet(animal);
                
                 MessageBox.Show("Animal Cadastado");
 
@@ -77,6 +94,20 @@ namespace TecPet
             PesoPetTextBox.Text = "";
             IdadePetTextBox.Text = "";
             comboBoxRacas.Text = "";
+            tipoPetCbx.Text = "";
+        }
+
+        private void inserirFotoBtn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "JPG Files(*.jpg)| *.jpg";
+
+            if(dialog.ShowDialog() == DialogResult.OK)
+            {
+                string foto = dialog.FileName.ToString();
+                picturePetBox.ImageLocation = foto;
+                
+            }
         }
     }
 }

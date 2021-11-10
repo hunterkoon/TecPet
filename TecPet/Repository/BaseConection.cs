@@ -14,10 +14,36 @@ namespace TecPet.Repository
     {
         public class Repository : Modelo
         {
-            string MyStringConnnection = "Server=localhost;Port=3306;database=tecpet;user id=root;password=***";
+            string MyStringConnnection = "Server=localhost;Port=3306;database=tecpet;user id=root;password=password123@";
 
             #region PETS
 
+            public List<AnimalModel> GetPets()
+            {
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
+                {
+                    try
+                    {
+                        List<AnimalModel> animals = new List<AnimalModel>();
+
+                        conn.Open();
+                        var sql = "SELECT * FROM animal";
+                        animals = conn.Query<AnimalModel>(sql).ToList();
+                        return animals;
+
+                    }
+                    catch
+                    {
+
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+
+            }
             public List<AnimalModel> GetRacas()
             {
                 using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
@@ -29,7 +55,7 @@ namespace TecPet.Repository
                         conn.Open();
                         var sql = "SELECT * FROM racas";
                         racas = conn.Query<AnimalModel>(sql).ToList();
-                        conn.Close();
+
                         return racas;
 
                     }
@@ -38,42 +64,49 @@ namespace TecPet.Repository
 
                         throw new Exception("Erro na conexão com banco de dados");
                     }
+                    finally
+                    {
+                        conn.Close();
+                    }
                 }
 
             }
-
-            public void PostPet(string nome, string raca, int idade, int peso)
+            public void PostPet(AnimalModel animal)
             {
                 using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
                 {
                     try
                     {
+
                         var i = new
                         {
-                            NOME = nome,
-                            RACA = raca,
-                            IDADE = idade,
-                            PESO = peso
+                            NOME = animal.Nome,
+                            RACA = animal.Raca,
+                            IDADE = animal.Idade,
+                            PESO = animal.Peso,
+                            IMAGEM = animal.Imagem,
+                            TIPO = animal.TipoPet
                         };
 
-                        var sql = @"insert into animal (Nome, Idade, Raca, Peso)
-                                    values (@NOME , @IDADE, @RACA, @PESO)";
+                        var sql = @"insert into animal (Nome, Idade, Raca, Peso, imagem, tipoPet)
+                                    values (@NOME , @IDADE, @RACA, @PESO, @IMAGEM, @TIPO)";
 
                         conn.Open();
 
-
                         conn.Execute(sql, i);
-                        conn.Close();
 
                     }
                     catch
                     {
                         throw new Exception("Erro na conexão com banco de dados");
                     }
+                    finally
+                    {
+                        conn.Close();
+                    }
                 }
 
             }
-
             public void DeletePet(int id)
             {
                 using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
@@ -89,48 +122,25 @@ namespace TecPet.Repository
 
                         conn.Open();
                         conn.Execute(sql, i);
-                        conn.Close();
 
                     }
                     catch
                     {
                         throw new Exception("Erro na conexão com banco de dados");
                     }
-                }
-
-            }
-
-            public List<AnimalModel> GetPets()
-            {
-                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
-                {
-                    try
+                    finally
                     {
-                        List<AnimalModel> animals = new List<AnimalModel>();
-
-                        conn.Open();
-                        var sql = "SELECT * FROM animal";
-                        animals = conn.Query<AnimalModel>(sql).ToList();
                         conn.Close();
-                        return animals;
-
-                    }
-                    catch
-                    {
-
-                        throw new Exception("Erro na conexão com banco de dados");
                     }
                 }
 
             }
 
-<<<<<<<<< Temporary merge branch 1
-=========
+
             #endregion
 
             #region USUÁRIOS
 
->>>>>>>>> Temporary merge branch 2
             public UsuarioModel Login(string usuario, string senha)
             {
                 using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
@@ -139,7 +149,8 @@ namespace TecPet.Repository
                     {
                         UsuarioModel user = new UsuarioModel();
 
-                        var i = new {
+                        var i = new
+                        {
 
                             USUARIO = usuario,
                             SENHA = senha
@@ -150,8 +161,6 @@ namespace TecPet.Repository
                         var sql = "SELECT * FROM usuarios WHERE usuario = @USUARIO and senha = @SENHA";
 
                         user = conn.Query<UsuarioModel>(sql, i).FirstOrDefault();
-                        conn.Close();
-
 
                         return user;
 
@@ -161,6 +170,10 @@ namespace TecPet.Repository
                     {
 
                         throw new Exception("Erro na conexão com banco de dados");
+                    }
+                    finally
+                    {
+                        conn.Close();
                     }
                 }
 
@@ -175,16 +188,15 @@ namespace TecPet.Repository
                         var i = new
 
                         {
-                            NOME = nome, 
+                            NOME = nome,
                             USUARIO = usuario,
                             SENHA = senha
                         };
 
-                        var sql = @"insert into usuarios (nome,usuario,senha)values(@NOME,@USUARIO,@SENHA)";
+                        var sql = @"insert into usuarios (nome,usuario,senha) values (@NOME,@USUARIO,@SENHA)";
 
                         conn.Open();
                         conn.Execute(sql, i);
-                        conn.Close();
 
                         return "Usuário Cadastrado";
 
@@ -192,6 +204,10 @@ namespace TecPet.Repository
                     catch
                     {
                         throw new Exception("Erro na conexão com banco de dados");
+                    }
+                    finally
+                    {
+                        conn.Close();
                     }
                 }
 
