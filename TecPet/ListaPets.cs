@@ -52,13 +52,13 @@ namespace TecPet
 
             try
             {
-                tabelaMeusPets.Rows.Clear();
-                Animais = repository.GetPets();
-                for (int i = 0; i < Animais.Count(); i++)
-                {
-                    tabelaMeusPets.Rows.Add(Animais[i].Id, Animais[i].Nome, Animais[i].Raca, Animais[i].Idade, Animais[i].Peso);
-
-                }
+                int selectedRowIndex = tabelaMeusPets.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = tabelaMeusPets.Rows[selectedRowIndex];
+                int cellValue = Convert.ToInt32(selectedRow.Cells["IdPet"].Value);
+                animal.Id = cellValue;
+            }
+            else
+                MessageBox.Show("Não selecionado");
 
             }
             catch (Exception ex)
@@ -75,8 +75,23 @@ namespace TecPet
         }
 
 
-        public void tabelaMeusPets_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            try
+            {
+                tabelaMeusPets.Rows.Clear();
+                var dados = repository.GetPets();
+                for (int i = 0; i < dados.Count(); i++)
+                {
+                    if (dados[i].Imagem != null)
+                    {
+                        // blob to byte
+                        byte[] imageBytes = dados[i].Imagem;
+                        MemoryStream buf = new MemoryStream(imageBytes);
+
+                        // converter para imagem
+                        Image image = Image.FromStream(buf, true);
+
+                        // rotacionar  imagem
+                        image.RotateFlip(RotateFlipType.Rotate90FlipX);
 
 
         }
