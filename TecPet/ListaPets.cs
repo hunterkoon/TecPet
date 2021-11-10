@@ -20,6 +20,8 @@ namespace TecPet
     public partial class ListaPets : Form
     {
         BaseConection.Repository repository = new BaseConection.Repository();
+        AnimalModel animal = new AnimalModel();
+
 
         public ListaPets()
         {
@@ -35,13 +37,31 @@ namespace TecPet
 
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-
-
+            if (animal.Id != 0)
+            {
+                repository.DeletePet(animal.Id);
+                MessageBox.Show("Pet Deletado");
+            }
+            else
+                MessageBox.Show("Selecione um Pet para deletar");
         }
 
 
         public void tabelaMeusPets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+
+            if (tabelaMeusPets.SelectedCells.Count > 0)
+            {
+                int selectedRowIndex = tabelaMeusPets.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = tabelaMeusPets.Rows[selectedRowIndex];
+                int cellValue = Convert.ToInt32(selectedRow.Cells["IdPet"].Value);
+
+                animal.Id = cellValue;
+
+            }
+            else
+                MessageBox.Show("Não selecionado");
 
 
         }
@@ -66,16 +86,26 @@ namespace TecPet
                 var dados = repository.GetPets();
                 for (int i = 0; i < dados.Count(); i++)
                 {
-                    if (dados[i].Imagem != null)    
+                    if (dados[i].Imagem != null)
                     {
-                        MemoryStream mstream = new MemoryStream(dados[i].Imagem);
-                        tabelaMeusPets.Rows.Add(dados[i].Id, dados[i].Nome, dados[i].Raca, dados[i].Idade, dados[i].Peso);
-                        imagemColumn.Image = Image.FromStream(mstream);
+                        // blob to byte
+                        byte[] imageBytes = dados[i].Imagem;
+                        MemoryStream buf = new MemoryStream(imageBytes);
 
+                        // to image 
+                        Image image = Image.FromStream(buf, true);
+
+                        // rotate image
+                        image.RotateFlip(RotateFlipType.Rotate90FlipX);
+
+                        //popular lista
+                        tabelaMeusPets.Rows.Add(dados[i].Id, dados[i].Nome, dados[i].Raca, dados[i].Idade, dados[i].Peso, dados[i].TipoPet,image);
+                        imagemColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
+                        tabelaMeusPets.Rows[i].Height = 100;                       
 
                     }
                     else
-                        tabelaMeusPets.Rows.Add(dados[i].Id, dados[i].Nome, dados[i].Raca, dados[i].Idade, dados[i].Peso);
+                        tabelaMeusPets.Rows.Add(dados[i].Id, dados[i].Nome, dados[i].Raca, dados[i].Idade, dados[i].Peso, dados[i].TipoPet);
 
 
                 }

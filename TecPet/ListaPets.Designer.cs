@@ -34,15 +34,16 @@ namespace TecPet
             this.deleteBtn = new System.Windows.Forms.Button();
             this.BtnAtualizar = new System.Windows.Forms.Button();
             this.tabelaMeusPets = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.cadastrarPetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imagemColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.cadastrarPetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaMeusPets)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -56,7 +57,7 @@ namespace TecPet
             this.groupBox1.Controls.Add(this.tabelaMeusPets);
             this.groupBox1.Location = new System.Drawing.Point(12, 80);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(776, 358);
+            this.groupBox1.Size = new System.Drawing.Size(1012, 358);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Gerenciar Pets";
@@ -76,7 +77,7 @@ namespace TecPet
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.Red;
             this.deleteBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.deleteBtn.Location = new System.Drawing.Point(654, 254);
+            this.deleteBtn.Location = new System.Drawing.Point(878, 254);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(111, 34);
             this.deleteBtn.TabIndex = 3;
@@ -86,7 +87,7 @@ namespace TecPet
             // 
             // BtnAtualizar
             // 
-            this.BtnAtualizar.Location = new System.Drawing.Point(654, 294);
+            this.BtnAtualizar.Location = new System.Drawing.Point(878, 294);
             this.BtnAtualizar.Name = "BtnAtualizar";
             this.BtnAtualizar.Size = new System.Drawing.Size(111, 31);
             this.BtnAtualizar.TabIndex = 2;
@@ -100,49 +101,25 @@ namespace TecPet
             this.tabelaMeusPets.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.tabelaMeusPets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabelaMeusPets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.IdPet,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
+            this.Tipo,
             this.imagemColumn});
             this.tabelaMeusPets.Location = new System.Drawing.Point(12, 81);
             this.tabelaMeusPets.Name = "tabelaMeusPets";
             this.tabelaMeusPets.RowTemplate.Height = 25;
-            this.tabelaMeusPets.Size = new System.Drawing.Size(636, 243);
+            this.tabelaMeusPets.Size = new System.Drawing.Size(844, 243);
             this.tabelaMeusPets.TabIndex = 1;
             this.tabelaMeusPets.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabelaMeusPets_CellContentClick);
             // 
-            // menuStrip1
+            // IdPet
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarPetToolStripMenuItem,
-            this.cadastrarUsuarioToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // cadastrarPetToolStripMenuItem
-            // 
-            this.cadastrarPetToolStripMenuItem.Name = "cadastrarPetToolStripMenuItem";
-            this.cadastrarPetToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
-            this.cadastrarPetToolStripMenuItem.Text = "Cadastrar Pet";
-            this.cadastrarPetToolStripMenuItem.Click += new System.EventHandler(this.cadastrarPetToolStripMenuItem_Click);
-            // 
-            // cadastrarUsuarioToolStripMenuItem
-            // 
-            this.cadastrarUsuarioToolStripMenuItem.Name = "cadastrarUsuarioToolStripMenuItem";
-            this.cadastrarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
-            this.cadastrarUsuarioToolStripMenuItem.Text = "Cadastrar Usuario";
-            this.cadastrarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cadastrarUsuarioToolStripMenuItem_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.IdPet.HeaderText = "Id";
+            this.IdPet.Name = "IdPet";
+            this.IdPet.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -168,18 +145,49 @@ namespace TecPet
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            // 
             // imagemColumn
             // 
             this.imagemColumn.HeaderText = "Imagem";
+            this.imagemColumn.Image = global::TecPet.Properties.Resources._1160_cat_head_outline__1_;
             this.imagemColumn.Name = "imagemColumn";
             this.imagemColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.imagemColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarPetToolStripMenuItem,
+            this.cadastrarUsuarioToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1036, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // cadastrarPetToolStripMenuItem
+            // 
+            this.cadastrarPetToolStripMenuItem.Name = "cadastrarPetToolStripMenuItem";
+            this.cadastrarPetToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.cadastrarPetToolStripMenuItem.Text = "Cadastrar Pet";
+            this.cadastrarPetToolStripMenuItem.Click += new System.EventHandler(this.cadastrarPetToolStripMenuItem_Click);
+            // 
+            // cadastrarUsuarioToolStripMenuItem
+            // 
+            this.cadastrarUsuarioToolStripMenuItem.Name = "cadastrarUsuarioToolStripMenuItem";
+            this.cadastrarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(112, 20);
+            this.cadastrarUsuarioToolStripMenuItem.Text = "Cadastrar Usuario";
+            this.cadastrarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cadastrarUsuarioToolStripMenuItem_Click);
             // 
             // ListaPets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1036, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -205,11 +213,12 @@ namespace TecPet
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cadastrarPetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarUsuarioToolStripMenuItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPet;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewImageColumn imagemColumn;
     }
 }

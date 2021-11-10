@@ -42,6 +42,7 @@ namespace TecPet
             this.PesoPetLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.girarDirBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tipoPetCbx = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -146,6 +147,7 @@ namespace TecPet
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.girarDirBtn);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tipoPetCbx);
             this.groupBox1.Controls.Add(this.label1);
@@ -165,6 +167,16 @@ namespace TecPet
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Pet";
+            // 
+            // girarDirBtn
+            // 
+            this.girarDirBtn.Location = new System.Drawing.Point(338, 37);
+            this.girarDirBtn.Name = "girarDirBtn";
+            this.girarDirBtn.Size = new System.Drawing.Size(67, 23);
+            this.girarDirBtn.TabIndex = 17;
+            this.girarDirBtn.Text = "Girar ->";
+            this.girarDirBtn.UseVisualStyleBackColor = true;
+            this.girarDirBtn.Click += new System.EventHandler(this.girarDirBtn_Click);
             // 
             // label2
             // 
@@ -191,7 +203,7 @@ namespace TecPet
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(258, 286);
+            this.label1.Location = new System.Drawing.Point(270, 279);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 15);
             this.label1.TabIndex = 14;
@@ -202,7 +214,7 @@ namespace TecPet
             this.picturePetBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.picturePetBox.Location = new System.Drawing.Point(258, 66);
             this.picturePetBox.Name = "picturePetBox";
-            this.picturePetBox.Size = new System.Drawing.Size(130, 130);
+            this.picturePetBox.Size = new System.Drawing.Size(147, 141);
             this.picturePetBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturePetBox.TabIndex = 13;
             this.picturePetBox.TabStop = false;
@@ -210,7 +222,7 @@ namespace TecPet
             // inserirFotoBtn
             // 
             this.inserirFotoBtn.Image = ((System.Drawing.Image)(resources.GetObject("inserirFotoBtn.Image")));
-            this.inserirFotoBtn.Location = new System.Drawing.Point(288, 217);
+            this.inserirFotoBtn.Location = new System.Drawing.Point(294, 213);
             this.inserirFotoBtn.Name = "inserirFotoBtn";
             this.inserirFotoBtn.Size = new System.Drawing.Size(68, 56);
             this.inserirFotoBtn.TabIndex = 12;
@@ -279,6 +291,7 @@ namespace TecPet
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox tipoPetCbx;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button girarDirBtn;
     }
 }
 
