@@ -54,10 +54,6 @@ namespace TecPet
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
-<<<<<<< HEAD
-            this.groupBox1.Controls.Add(this.BtnEditar);
-=======
->>>>>>> imageTest
             this.groupBox1.Controls.Add(this.welcomeLabel);
             this.groupBox1.Controls.Add(this.deleteBtn);
             this.groupBox1.Controls.Add(this.BtnAtualizar);
@@ -75,11 +71,7 @@ namespace TecPet
             // 
             resources.ApplyResources(this.deleteBtn, "deleteBtn");
             this.deleteBtn.BackColor = System.Drawing.Color.Red;
-<<<<<<< HEAD
-            this.deleteBtn.ForeColor = System.Drawing.Color.Transparent;
-=======
             this.deleteBtn.ForeColor = System.Drawing.SystemColors.Control;
->>>>>>> imageTest
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.UseVisualStyleBackColor = false;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
