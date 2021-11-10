@@ -45,6 +45,7 @@ namespace TecPet
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrarPetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnEditar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaMeusPets)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -163,6 +164,14 @@ namespace TecPet
             this.cadastrarUsuarioToolStripMenuItem.Name = "cadastrarUsuarioToolStripMenuItem";
             this.cadastrarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cadastrarUsuarioToolStripMenuItem_Click);
             // 
+            // BtnEditar
+            // 
+            resources.ApplyResources(this.BtnEditar, "BtnEditar");
+            this.BtnEditar.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnEditar.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.UseVisualStyleBackColor = false;
+            // 
             // ListaPets
             // 
             resources.ApplyResources(this, "$this");
@@ -199,5 +208,6 @@ namespace TecPet
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewImageColumn imagemColumn;
+        private System.Windows.Forms.Button BtnEditar;
     }
 }
