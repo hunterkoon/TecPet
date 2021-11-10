@@ -44,6 +44,7 @@ namespace TecPet
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrarPetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnEditar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaMeusPets)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -51,6 +52,8 @@ namespace TecPet
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.BtnEditar);
             this.groupBox1.Controls.Add(this.welcomeLabel);
             this.groupBox1.Controls.Add(this.deleteBtn);
             this.groupBox1.Controls.Add(this.BtnAtualizar);
@@ -76,8 +79,7 @@ namespace TecPet
             // deleteBtn
             // 
             this.deleteBtn.BackColor = System.Drawing.Color.Red;
-            this.deleteBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.deleteBtn.Location = new System.Drawing.Point(878, 254);
+            this.deleteBtn.ForeColor = System.Drawing.Color.Transparent;
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(111, 34);
             this.deleteBtn.TabIndex = 3;
@@ -183,6 +185,14 @@ namespace TecPet
             this.cadastrarUsuarioToolStripMenuItem.Text = "Cadastrar Usuario";
             this.cadastrarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cadastrarUsuarioToolStripMenuItem_Click);
             // 
+            // BtnEditar
+            // 
+            resources.ApplyResources(this.BtnEditar, "BtnEditar");
+            this.BtnEditar.BackColor = System.Drawing.Color.ForestGreen;
+            this.BtnEditar.ForeColor = System.Drawing.Color.Transparent;
+            this.BtnEditar.Name = "BtnEditar";
+            this.BtnEditar.UseVisualStyleBackColor = false;
+            // 
             // ListaPets
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -220,5 +230,6 @@ namespace TecPet
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewImageColumn imagemColumn;
+        private System.Windows.Forms.Button BtnEditar;
     }
 }
