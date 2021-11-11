@@ -36,9 +36,10 @@ namespace TecPet.Model
         public class AgendaModel
         {
             public int Id { get; set; }
-            public DateTime DiaSemana { get; set; }
+            public DateTime Data { get; set; }
             public DateTime Horario { get; set; }
             public double QuantidadeRacao { get; set; }
+            public bool? Umida { get; set; }
 
         }
         public class RelatorioModel : DispositivoModel

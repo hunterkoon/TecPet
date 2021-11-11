@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using TecPet.Entitys;
 using TecPet.Model;
 using TecPet.Repository;
+using TecPet.View;
 using static TecPet.Model.Modelo;
 
 namespace TecPet
@@ -130,6 +131,13 @@ namespace TecPet
         {
             CadastroUsuario cadUser = new CadastroUsuario();
             cadUser.Show();
+        }
+
+        private void agendarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Agenda agenda = new Agenda();            
+            agenda.Show();
+            agenda.AtualizaAgenda();
         }
     }
 }
