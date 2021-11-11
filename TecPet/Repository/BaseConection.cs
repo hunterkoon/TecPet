@@ -250,7 +250,6 @@ namespace TecPet.Repository
 
             }
 
-
             public List<AgendaModel> GetAgendamentos()
             {
                 using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
@@ -278,6 +277,30 @@ namespace TecPet.Repository
 
             }
 
+            public void LimparAgenda()
+            {
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
+                {
+                    try
+                    {
+                 
+                        var sql = @"delete from agenda";
+
+                        conn.Open();
+                        conn.Execute(sql);
+
+                    }
+                    catch
+                    {
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+
+            }
 
             #endregion
 
