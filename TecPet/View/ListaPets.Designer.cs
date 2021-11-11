@@ -30,6 +30,7 @@ namespace TecPet
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaPets));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.welcomeLabel = new System.Windows.Forms.Label();
             this.deleteBtn = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@ namespace TecPet
             this.cadastrarPetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnEditar = new System.Windows.Forms.Button();
+            this.agendarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaMeusPets)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -138,8 +140,10 @@ namespace TecPet
             // 
             // imagemColumn
             // 
+            dataGridViewCellStyle1.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle1.NullValue")));
+            this.imagemColumn.DefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.imagemColumn, "imagemColumn");
-            this.imagemColumn.Image = global::TecPet.Properties.Resources._1160_cat_head_outline__1_;
+            this.imagemColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.imagemColumn.Name = "imagemColumn";
             this.imagemColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.imagemColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -149,7 +153,8 @@ namespace TecPet
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrarPetToolStripMenuItem,
-            this.cadastrarUsuarioToolStripMenuItem});
+            this.cadastrarUsuarioToolStripMenuItem,
+            this.agendarToolStripMenuItem});
             this.menuStrip1.Name = "menuStrip1";
             // 
             // cadastrarPetToolStripMenuItem
@@ -171,6 +176,12 @@ namespace TecPet
             this.BtnEditar.ForeColor = System.Drawing.Color.Transparent;
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.UseVisualStyleBackColor = false;
+            // 
+            // agendarToolStripMenuItem
+            // 
+            resources.ApplyResources(this.agendarToolStripMenuItem, "agendarToolStripMenuItem");
+            this.agendarToolStripMenuItem.Name = "agendarToolStripMenuItem";
+            this.agendarToolStripMenuItem.Click += new System.EventHandler(this.agendarToolStripMenuItem_Click);
             // 
             // ListaPets
             // 
@@ -201,6 +212,7 @@ namespace TecPet
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cadastrarPetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarUsuarioToolStripMenuItem;
+        private System.Windows.Forms.Button BtnEditar;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdPet;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -208,6 +220,6 @@ namespace TecPet
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewImageColumn imagemColumn;
-        private System.Windows.Forms.Button BtnEditar;
+        private System.Windows.Forms.ToolStripMenuItem agendarToolStripMenuItem;
     }
 }

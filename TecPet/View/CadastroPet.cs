@@ -103,9 +103,6 @@ namespace TecPet
                 // Atualiza a Lista e limpa os campos
 
                 LimparCampos();
-                ListaPets lstPets = new ListaPets();
-                lstPets.tabelaPets();
-
 
             }
             catch (Exception ex)
@@ -149,6 +146,7 @@ namespace TecPet
             IdadePetTextBox.Text = "";
             comboBoxRacas.Text = "";
             tipoPetCbx.Text = "";
+            picturePetBox.ImageLocation = null;
         }
 
         private void girarDirBtn_Click(object sender, EventArgs e)

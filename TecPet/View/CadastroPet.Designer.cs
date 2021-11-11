@@ -61,7 +61,7 @@ namespace TecPet
             this.comboBoxRacas.FormattingEnabled = true;
             this.comboBoxRacas.Items.AddRange(new object[] {
             "Sem Raça Definida"});
-            this.comboBoxRacas.Location = new System.Drawing.Point(24, 271);
+            this.comboBoxRacas.Location = new System.Drawing.Point(24, 208);
             this.comboBoxRacas.Name = "comboBoxRacas";
             this.comboBoxRacas.Size = new System.Drawing.Size(179, 23);
             this.comboBoxRacas.TabIndex = 0;
@@ -70,7 +70,7 @@ namespace TecPet
             // cbxRacas
             // 
             this.cbxRacas.AutoSize = true;
-            this.cbxRacas.Location = new System.Drawing.Point(24, 253);
+            this.cbxRacas.Location = new System.Drawing.Point(24, 190);
             this.cbxRacas.Name = "cbxRacas";
             this.cbxRacas.Size = new System.Drawing.Size(112, 15);
             this.cbxRacas.TabIndex = 1;
@@ -88,7 +88,7 @@ namespace TecPet
             // NomePeLabel
             // 
             this.NomePeLabel.AutoSize = true;
-            this.NomePeLabel.Location = new System.Drawing.Point(24, 66);
+            this.NomePeLabel.Location = new System.Drawing.Point(24, 45);
             this.NomePeLabel.Name = "NomePeLabel";
             this.NomePeLabel.Size = new System.Drawing.Size(40, 15);
             this.NomePeLabel.TabIndex = 3;
@@ -96,22 +96,22 @@ namespace TecPet
             // 
             // NomePetTextBox
             // 
-            this.NomePetTextBox.Location = new System.Drawing.Point(24, 84);
+            this.NomePetTextBox.Location = new System.Drawing.Point(24, 63);
             this.NomePetTextBox.Name = "NomePetTextBox";
             this.NomePetTextBox.Size = new System.Drawing.Size(179, 23);
             this.NomePetTextBox.TabIndex = 4;
             // 
             // IdadePetTextBox
             // 
-            this.IdadePetTextBox.Location = new System.Drawing.Point(24, 210);
+            this.IdadePetTextBox.Location = new System.Drawing.Point(24, 272);
             this.IdadePetTextBox.Name = "IdadePetTextBox";
-            this.IdadePetTextBox.Size = new System.Drawing.Size(62, 23);
+            this.IdadePetTextBox.Size = new System.Drawing.Size(80, 23);
             this.IdadePetTextBox.TabIndex = 6;
             // 
             // IdadePetLabel
             // 
             this.IdadePetLabel.AutoSize = true;
-            this.IdadePetLabel.Location = new System.Drawing.Point(24, 192);
+            this.IdadePetLabel.Location = new System.Drawing.Point(24, 254);
             this.IdadePetLabel.Name = "IdadePetLabel";
             this.IdadePetLabel.Size = new System.Drawing.Size(39, 15);
             this.IdadePetLabel.TabIndex = 5;
@@ -119,15 +119,15 @@ namespace TecPet
             // 
             // PesoPetTextBox
             // 
-            this.PesoPetTextBox.Location = new System.Drawing.Point(131, 210);
+            this.PesoPetTextBox.Location = new System.Drawing.Point(123, 272);
             this.PesoPetTextBox.Name = "PesoPetTextBox";
-            this.PesoPetTextBox.Size = new System.Drawing.Size(72, 23);
+            this.PesoPetTextBox.Size = new System.Drawing.Size(80, 23);
             this.PesoPetTextBox.TabIndex = 8;
             // 
             // PesoPetLabel
             // 
             this.PesoPetLabel.AutoSize = true;
-            this.PesoPetLabel.Location = new System.Drawing.Point(131, 192);
+            this.PesoPetLabel.Location = new System.Drawing.Point(123, 254);
             this.PesoPetLabel.Name = "PesoPetLabel";
             this.PesoPetLabel.Size = new System.Drawing.Size(32, 15);
             this.PesoPetLabel.TabIndex = 7;
@@ -136,10 +136,11 @@ namespace TecPet
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.OliveDrab;
+            this.button1.FlatAppearance.BorderSize = 0;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(240, 364);
+            this.button1.Location = new System.Drawing.Point(151, 374);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 46);
+            this.button1.Size = new System.Drawing.Size(260, 46);
             this.button1.TabIndex = 9;
             this.button1.Text = "Cadastrar ";
             this.button1.UseVisualStyleBackColor = false;
@@ -163,16 +164,16 @@ namespace TecPet
             this.groupBox1.Controls.Add(this.comboBoxRacas);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(428, 334);
+            this.groupBox1.Size = new System.Drawing.Size(399, 342);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cadastro de Pet";
             // 
             // girarDirBtn
             // 
-            this.girarDirBtn.Location = new System.Drawing.Point(338, 37);
+            this.girarDirBtn.Location = new System.Drawing.Point(228, 63);
             this.girarDirBtn.Name = "girarDirBtn";
-            this.girarDirBtn.Size = new System.Drawing.Size(67, 23);
+            this.girarDirBtn.Size = new System.Drawing.Size(147, 23);
             this.girarDirBtn.TabIndex = 17;
             this.girarDirBtn.Text = "Girar ->";
             this.girarDirBtn.UseVisualStyleBackColor = true;
@@ -181,7 +182,7 @@ namespace TecPet
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 130);
+            this.label2.Location = new System.Drawing.Point(24, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 15);
             this.label2.TabIndex = 16;
@@ -195,7 +196,7 @@ namespace TecPet
             "Cachorro",
             "Passaro",
             "Camundongos"});
-            this.tipoPetCbx.Location = new System.Drawing.Point(24, 148);
+            this.tipoPetCbx.Location = new System.Drawing.Point(24, 134);
             this.tipoPetCbx.Name = "tipoPetCbx";
             this.tipoPetCbx.Size = new System.Drawing.Size(179, 23);
             this.tipoPetCbx.TabIndex = 15;
@@ -203,7 +204,7 @@ namespace TecPet
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(270, 279);
+            this.label1.Location = new System.Drawing.Point(234, 305);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 15);
             this.label1.TabIndex = 14;
@@ -212,19 +213,19 @@ namespace TecPet
             // picturePetBox
             // 
             this.picturePetBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.picturePetBox.Location = new System.Drawing.Point(258, 66);
+            this.picturePetBox.Location = new System.Drawing.Point(228, 92);
             this.picturePetBox.Name = "picturePetBox";
-            this.picturePetBox.Size = new System.Drawing.Size(147, 141);
-            this.picturePetBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picturePetBox.Size = new System.Drawing.Size(145, 145);
+            this.picturePetBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picturePetBox.TabIndex = 13;
             this.picturePetBox.TabStop = false;
             // 
             // inserirFotoBtn
             // 
             this.inserirFotoBtn.Image = ((System.Drawing.Image)(resources.GetObject("inserirFotoBtn.Image")));
-            this.inserirFotoBtn.Location = new System.Drawing.Point(294, 213);
+            this.inserirFotoBtn.Location = new System.Drawing.Point(228, 239);
             this.inserirFotoBtn.Name = "inserirFotoBtn";
-            this.inserirFotoBtn.Size = new System.Drawing.Size(68, 56);
+            this.inserirFotoBtn.Size = new System.Drawing.Size(147, 56);
             this.inserirFotoBtn.TabIndex = 12;
             this.inserirFotoBtn.UseVisualStyleBackColor = true;
             this.inserirFotoBtn.Click += new System.EventHandler(this.inserirFotoBtn_Click);
@@ -232,10 +233,11 @@ namespace TecPet
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.FlatAppearance.BorderSize = 0;
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(107, 364);
+            this.button3.Location = new System.Drawing.Point(12, 374);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 46);
+            this.button3.Size = new System.Drawing.Size(123, 46);
             this.button3.TabIndex = 11;
             this.button3.Text = "Limpar";
             this.button3.UseVisualStyleBackColor = false;
@@ -254,7 +256,7 @@ namespace TecPet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 422);
+            this.ClientSize = new System.Drawing.Size(420, 445);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.erroMenssagem);

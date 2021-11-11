@@ -215,6 +215,95 @@ namespace TecPet.Repository
 
             #endregion
 
+            #region Agendamentos
+
+            public void AgendarData(AgendaModel agenda)
+            {
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
+                {
+                    try
+                    {
+                        var i = new
+
+                        {
+                            DATA = agenda.Data,
+                            HORARIO = agenda.Horario,
+                            QTD = agenda.QuantidadeRacao,
+                            UMIDA = agenda.Umida
+                        };
+
+                        var sql = @"insert into agenda ( data , horario , QuantidadeRacao , umida ) values (@DATA, @HORARIO, @QTD, @UMIDA)";
+
+                        conn.Open();
+                        conn.Execute(sql, i);
+                                              
+                    }
+                    catch
+                    {
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+
+            }
+
+            public List<AgendaModel> GetAgendamentos()
+            {
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
+                {
+                    try
+                    {
+                        List<AgendaModel> agenda = new List<AgendaModel>();
+
+                        conn.Open();
+                        var sql = "SELECT * FROM agenda";
+                        agenda = conn.Query<AgendaModel>(sql).ToList();
+                        return agenda;
+
+                    }
+                    catch
+                    {
+
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+
+            }
+
+            public void LimparAgenda()
+            {
+                using (IDbConnection conn = new MySqlConnection(MyStringConnnection))
+                {
+                    try
+                    {
+                 
+                        var sql = @"delete from agenda";
+
+                        conn.Open();
+                        conn.Execute(sql);
+
+                    }
+                    catch
+                    {
+                        throw new Exception("Erro na conexão com banco de dados");
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+
+            }
+
+            #endregion
+
 
         }
 
