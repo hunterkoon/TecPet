@@ -80,7 +80,6 @@ namespace TecPet.View
         }
 
 
-
         public void AtualizaAgenda()
         {
             var agendamentos = repository.GetAgendamentos();
